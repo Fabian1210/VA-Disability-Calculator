@@ -1,11 +1,37 @@
-body {
+header {
+  border: solid greenyellow;
+  width: 100vw;
+  overflow: auto;
+}
+
+.navbar {
+  /* text color */
+  color: white;
+}
+
+.nav-btns {
+  /* border: solid pink; */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 10px;
+}
+
+body {
+  width: 100vw;
+  border: solid red;
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 #main-container {
   border: solid blue;
+
   height: 400px;
-  width: 600px;
+  max-width: 600px;
 }
