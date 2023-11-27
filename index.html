@@ -13,22 +13,27 @@
       crossorigin="anonymous"
     />
   </head>
-  <header>
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-      VA Disability Calculator
-      <!-- dark mode toggle -->
-      <div class="nav-btns">
-        <button class="dark-mode" onclick="darkMode()">dark</button>
-        <button class="reset-btn">reset</button>
-      </div>
-    </nav>
-  </header>
+  <header></header>
   <body>
-    <!--TODO: add title -->
     <div id="main-container">
-      <!-- TODO: add cards with circle graph -->
-      <!-- TODO: add total disability percentage identifier -->
-      <!-- TODO: add clickable disability percentages(like todo list with description) -->
+      <div
+        class="navbar bg-dark border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        VA Disability Calculator
+        <!-- dark mode toggle -->
+        <div class="nav-btns">
+          <button class="dark-mode" onclick="darkMode()">dark</button>
+          <button class="reset-btn">reset</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="circle-graph">circle graph</div>
+        <div class="circle-info">graph info</div>
+      </div>
+      <div class="monthly-comp">Monthly Compensation: $12345.55</div>
+      <div class="percentage-list">Selected percentages list</div>
     </div>
   </body>
   <script src="script.js"></script>

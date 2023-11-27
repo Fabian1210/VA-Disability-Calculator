@@ -1,7 +1,21 @@
-header {
-  border: solid greenyellow;
+body {
   width: 100vw;
-  overflow: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid red;
+  background-color: white;
+  color: black;
+}
+
+#main-container {
+  border: solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 600px;
 }
 
 .navbar {
@@ -17,21 +31,41 @@ header {
   padding-right: 10px;
 }
 
-body {
-  width: 100vw;
-  border: solid red;
-  background-color: white;
-  color: black;
-}
-
 .dark-mode {
   background-color: black;
   color: white;
 }
 
-#main-container {
-  border: solid blue;
+.content {
+  border: solid green;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  height: 300px;
+}
 
-  height: 400px;
-  max-width: 600px;
+.circle-graph,
+.circle-info {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.circle-graph {
+  border: solid orange;
+}
+.circle-info {
+  border: solid blue;
+}
+
+.monthly-comp {
+  border: solid magenta;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.percentage-list {
+  border: solid sienna;
+  padding: 10px;
 }
