@@ -1,6 +1,6 @@
 body {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,11 +10,12 @@ body {
 }
 
 #main-container {
+  margin: 10px 0;
   border: solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 400px;
+  height: auto;
   width: 600px;
 }
 
@@ -36,7 +37,7 @@ body {
   color: white;
 }
 
-.content {
+.graph-content {
   border: solid green;
   display: flex;
   justify-content: space-between;
@@ -57,7 +58,7 @@ body {
   border: solid blue;
 }
 
-.monthly-comp {
+.monthly-comp-container {
   border: solid magenta;
   display: flex;
   justify-content: center;
@@ -65,7 +66,26 @@ body {
   padding: 15px;
 }
 
-.percentage-list {
+.monthly-comp-info {
+  border: solid black;
+  background-color: darkolivegreen;
+  padding: 10px;
+}
+
+.percentage-list-container {
   border: solid sienna;
   padding: 10px;
+}
+
+.percentage-list-info {
+  border: solid black;
+  padding: 10px;
+}
+
+/* hiding grid only works with ID */
+#percentages-grid {
+  background-color: cyan;
+  width: 100%;
+  padding: 50px 0;
+  margin-top: 20px;
 }

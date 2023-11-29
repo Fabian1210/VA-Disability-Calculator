@@ -28,12 +28,25 @@
         </div>
       </div>
 
-      <div class="content">
+      <div class="graph-content">
+        <!-- Graph/ graph info -->
         <div class="circle-graph">circle graph</div>
         <div class="circle-info">graph info</div>
       </div>
-      <div class="monthly-comp">Monthly Compensation: $12345.55</div>
-      <div class="percentage-list">Selected percentages list</div>
+      <!-- Monthly compensation -->
+      <div class="monthly-comp-container">
+        <div class="monthly-comp-info">Monthly Compensation: $12345.55</div>
+      </div>
+      <!-- Percentages container -->
+      <div class="percentage-list-container">
+        <div class="percentage-list-info">Selected percentages list</div>
+      </div>
+      <!-- Percentages grid/label -->
+      <div class="percentages-conatiner">
+        <!-- toggle hide grid -->
+        <button onclick="hideGrid()">Hide Grid</button>
+        <div id="percentages-grid">Percentages grid goes here</div>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>
