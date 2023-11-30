@@ -87,5 +87,14 @@ body {
   background-color: cyan;
   width: 100%;
   padding: 50px 0;
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+.calculate-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.calculate-btn {
+  background-color: greenyellow;
 }
