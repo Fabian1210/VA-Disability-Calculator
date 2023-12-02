@@ -80,6 +80,8 @@ body {
 .percentage-list-info {
   border: solid black;
   padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 
 /* hiding grid only works with ID */
@@ -90,6 +92,14 @@ body {
   margin: 20px 0;
 }
 
+/* ---Grid--- */
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px;
+  gap: 5px;
+}
 .calculate-btn-container {
   display: flex;
   justify-content: center;
