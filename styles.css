@@ -32,7 +32,7 @@ body {
   padding-right: 10px;
 }
 
-.dark-mode {
+.darkMode-btn {
   background-color: black;
   color: white;
 }
@@ -84,8 +84,10 @@ body {
   grid-template-columns: auto auto auto auto;
 }
 
-/* hiding grid only works with ID */
+/* hiding grid*/
 #percentages-grid {
+  /* TODO:display only works on second click */
+  display: none;
   background-color: cyan;
   width: 100%;
   padding: 50px 0;
@@ -107,4 +109,76 @@ body {
 
 .calculate-btn {
   background-color: greenyellow;
+}
+
+/* labels */
+
+.labels {
+  border: solid chartreuse;
+}
+
+.deliberate-rating {
+  border: solid red;
+  display: inline-flexbox;
+}
+
+.form-floating,
+.floating-select {
+  z-index: 0;
+}
+
+/* dropdown button/percentages */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-bottom: 1px black;
+  min-width: 92px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  list-style-type: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dropdown-content li:hover {
+  background-color: #ccc;
+}
+
+.dropdown-content a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
 }
