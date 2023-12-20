@@ -9,6 +9,7 @@ function startUp() {
   darkMode();
   hideGrid();
   gridBtns();
+  addBtn();
 }
 /*--------------------------------------------------*/
 /*--------------------------------------------------*/
@@ -60,6 +61,26 @@ function addToList(percentageVal) {
   selectedPercentagesList.appendChild(newPercentage);
 }
 
+//add disability Button
+function addBtn() {
+  const addBtn = document.querySelector(".add-btn");
+  const description = document.getElementById("user-input").textContent;
+  const percentList = document.getElementsByTagName("li");
+
+  addBtn.addEventListener("click", function () {
+    //loop through list to get selected percentage text
+    let percentage = "";
+    for (let i = 0; i < percentList.length; i++) {
+      percentage += percentList[i].textContent;
+    }
+
+    const val = description + percentage;
+    addToList(val);
+    console.log(description);
+    console.log(percentage);
+  });
+}
+
 //dropdown percentages
 function toggleDropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -71,7 +92,7 @@ function selectPercentage(percentage) {
   dropdownBtn.textContent = percentage + "%";
 }
 
-//close after clicked
+//close dropdown after clicked
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -84,7 +105,5 @@ window.onclick = function (event) {
     }
   }
 };
-
-//Calculate percentages Button
 
 //Reset Button to clear list
