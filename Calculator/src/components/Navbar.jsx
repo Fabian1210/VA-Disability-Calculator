@@ -3,7 +3,7 @@ import React from "react";
 export default function Navbar() {
   return (
     <>
-      <div>Navbar</div>
+      <div>Va Disability Calculator</div>
       <button>Dark Mode</button>
       <button>Reset</button>
     </>
