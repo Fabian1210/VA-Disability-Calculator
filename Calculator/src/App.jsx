@@ -1,12 +1,12 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Nav from "./components/Nav";
 import PercentageGrid from "./components/PercentageGrid";
 import PercentageGraph from "./components/PercentageGraph";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Nav />
       <PercentageGraph />
       <PercentageGrid />
     </>
