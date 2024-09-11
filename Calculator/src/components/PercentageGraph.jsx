@@ -6,9 +6,9 @@ export default function PercentageGraph() {
   const percentage = 66;
   return (
     <>
-      <div style={{ width: 100, height: 100 }}>
+      {/* <div style={{ width: 100, height: 100 }}>
         <CircularProgressbar value={percentage} text={`${percentage}%`} />
-      </div>
+      </div> */}
     </>
   );
 }
