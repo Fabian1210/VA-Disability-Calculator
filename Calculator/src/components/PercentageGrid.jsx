@@ -18,39 +18,92 @@ export default function PercentageGrid() {
       }
     });
   };
+
+  //reset rating to 0
+  const resetRating = () => {
+    setRating(0);
+  };
   return (
     <>
-      <div>Combined rating: {rating.toFixed()}%</div>
-      <div>
-        <button value="10" onClick={addRatingClick}>
+      <div
+        className="row"
+        style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
+      >
+        Combined Rating: {rating.toFixed()}%
+      </div>
+      <button className="btn btn-primary" onClick={resetRating}>
+        Reset
+      </button>
+      <div className="row justify-content-center">
+        <button
+          type="button"
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="10"
+          onClick={addRatingClick}
+        >
           10%
         </button>
-        <button value="20" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="20"
+          onClick={addRatingClick}
+        >
           20%
         </button>
-        <button value="30" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="30"
+          onClick={addRatingClick}
+        >
           30%
         </button>
-        <button value="40" onClick={addRatingClick}>
+
+        <div classname="w-100"></div>
+
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="40"
+          onClick={addRatingClick}
+        >
           40%
         </button>
-        <button value="50" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="50"
+          onClick={addRatingClick}
+        >
           50%
         </button>
-        <button value="60" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="60"
+          onClick={addRatingClick}
+        >
           60%
         </button>
-        <button value="70" onClick={addRatingClick}>
+
+        <div className="w-100"></div>
+
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="70"
+          onClick={addRatingClick}
+        >
           70%
         </button>
-        <button value="80" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="80"
+          onClick={addRatingClick}
+        >
           80%
         </button>
-        <button value="90" onClick={addRatingClick}>
+        <button
+          className="col-sm-2 mx-1 my-1 btn btn-info"
+          value="90"
+          onClick={addRatingClick}
+        >
           90%
-        </button>
-        <button value="100" onClick={addRatingClick}>
-          100%
         </button>
       </div>
     </>
