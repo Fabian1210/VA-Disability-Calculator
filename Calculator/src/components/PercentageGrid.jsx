@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Compensation from "./Compensation";
 
 export default function PercentageGrid() {
   const [rating, setRating] = useState(0);
@@ -25,6 +26,7 @@ export default function PercentageGrid() {
   };
   return (
     <>
+      <Compensation rating={rating} />
       <div
         className="row"
         style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
