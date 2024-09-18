@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Compensation from "./Compensation";
+import PercentageGraph from "./PercentageGraph";
 
 export default function PercentageGrid() {
   const [rating, setRating] = useState(0);
@@ -26,6 +27,7 @@ export default function PercentageGrid() {
   };
   return (
     <>
+      <PercentageGraph rating={rating.toFixed()} />
       <Compensation rating={rating} />
       <div
         className="row"
