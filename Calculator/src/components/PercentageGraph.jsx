@@ -11,7 +11,8 @@ export default function PercentageGraph({ rating }) {
           text={`${rating}%`}
           styles={buildStyles({
             pathColor: "green",
-            textSize: "20px",
+            textWrap: "wrap",
+            textSize: "27px",
             textColor: "green",
             pathTransitionDuration: 0.5,
           })}
