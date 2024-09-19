@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import Compensation from "./Compensation";
 import PercentageGraph from "./PercentageGraph";
+import RatingsList from "./RatingsList"; // Import the RatingList component
 
 export default function PercentageGrid() {
   const [rating, setRating] = useState(0);
 
+  // New state for the selected ratings list
+  const [selectedRatings, setSelectedRatings] = useState([]);
+
   const addRatingClick = (e) => {
     const value = parseInt(e.target.value);
+
+    // Add value to the selectedRatings list
+    setSelectedRatings((prevRatings) => [...prevRatings, value]);
 
     //convert btn value to number
     setRating((prevRating) => {
@@ -21,14 +28,29 @@ export default function PercentageGrid() {
     });
   };
 
+  // Function to remove a rating from the list when clicked
+  const removeRatingClick = (valueToRemove) => {
+    setSelectedRatings((prevRatings) =>
+      prevRatings.filter((rating) => rating !== valueToRemove)
+    );
+  };
+
   //reset rating to 0
   const resetRating = () => {
     setRating(0);
+    setSelectedRatings([]); // Clear the list when reset
   };
+
   return (
     <>
       <PercentageGraph rating={rating.toFixed()} />
       <Compensation rating={rating} />
+      {/* Display the selected ratings in a separate component */}
+      <RatingsList
+        selectedRatings={selectedRatings}
+        removeRatingClick={removeRatingClick}
+      />
+
       <div
         className="row"
         style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
