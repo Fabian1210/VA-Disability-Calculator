@@ -1,41 +1,43 @@
 import React, { useState } from "react";
 import Compensation from "./Compensation";
 import PercentageGraph from "./PercentageGraph";
-import RatingsList from "./RatingsList"; // Import the RatingList component
+import RatingsList from "./RatingsList";
+import VaMath from "./VaMath";
 
 export default function PercentageGrid() {
-  const [rating, setRating] = useState(0);
-
-  // New state for the selected ratings list
-  const [selectedRatings, setSelectedRatings] = useState([]);
+  const [rating, setRating] = useState(0); // Combined rating
+  const [selectedRatings, setSelectedRatings] = useState([]); // List of individual ratings
 
   const addRatingClick = (e) => {
     const value = parseInt(e.target.value);
-
-    // Add value to the selectedRatings list
+    // Update the selected ratings list
     setSelectedRatings((prevRatings) => [...prevRatings, value]);
 
-    //convert btn value to number
+    // Update the combined rating using VA math
     setRating((prevRating) => {
-      const combinedRating = prevRating + value;
-      //todo: temporary math logic to not exceed 100. will need to apply correct formula
-      if (combinedRating >= 100) {
-        //stops count from exceeding 100
-        return 100;
-      } else {
-        return combinedRating;
-      }
+      const updatedRatings = [...selectedRatings, value];
+      return calculateVaMath(updatedRatings);
     });
   };
 
-  // Function to remove a rating from the list when clicked
-  const removeRatingClick = (valueToRemove) => {
-    setSelectedRatings((prevRatings) =>
-      prevRatings.filter((rating) => rating !== valueToRemove)
-    );
+  const calculateVaMath = (ratings) => {
+    let combinedRating = 0;
+    let remainingPercentage = 100;
+
+    // Sort ratings in descending order
+    ratings.sort((a, b) => b - a);
+
+    // Apply VA math logic
+    ratings.forEach((rating) => {
+      let ratingImpact = (remainingPercentage * rating) / 100;
+      combinedRating += ratingImpact;
+      remainingPercentage -= ratingImpact;
+    });
+
+    return Math.min(combinedRating, 100); // Ensure the rating does not exceed 100
   };
 
-  //reset rating to 0
+  // Reset function to clear selected ratings and reset the rating
   const resetRating = () => {
     setRating(0);
     setSelectedRatings([]); // Clear the list when reset
@@ -43,20 +45,49 @@ export default function PercentageGrid() {
 
   return (
     <>
-      <PercentageGraph rating={rating.toFixed()} />
-      <Compensation rating={rating} />
-      {/* Display the selected ratings in a separate component */}
-      <RatingsList
-        selectedRatings={selectedRatings}
-        removeRatingClick={removeRatingClick}
-      />
-
       <div
-        className="row"
-        style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
+        style={{
+          display: "flex",
+          width: "100%",
+          border: "solid yellow",
+          justifyContent: "space-evenly",
+        }}
       >
-        Combined Rating: {rating.toFixed()}%
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "solid blue",
+            width: "50%",
+          }}
+        >
+          <PercentageGraph rating={rating.toFixed()} />
+          <div
+            className="row"
+            style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
+          >
+            <p
+              style={{
+                textAlign: "center",
+                padding: 0,
+                margin: 0,
+                fontSize: "10px",
+                fontWeight: "bold",
+              }}
+            >
+              <VaMath selectedRatings={selectedRatings} />
+            </p>
+          </div>
+        </div>
+        <div style={{ border: "solid red", width: "50%" }}>
+          <Compensation rating={Math.round(rating)} />{" "}
+          {/* Round rating for compensation */}
+        </div>
       </div>
+      {/* Display the selected ratings in a separate component */}
+      <RatingsList selectedRatings={selectedRatings} />
+
       <button className="btn btn-primary" onClick={resetRating}>
         Reset
       </button>
@@ -84,7 +115,7 @@ export default function PercentageGrid() {
           30%
         </button>
 
-        <div classname="w-100"></div>
+        <div className="w-100"></div>
 
         <button
           className="col-sm-2 mx-1 my-1 btn btn-info"
