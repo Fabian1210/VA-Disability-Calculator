@@ -16,16 +16,22 @@ export default function Compensation({ rating }) {
   const monthlyComp = values[rating] || 0;
 
   return (
-    <div
-      className="row"
-      style={{
-        backgroundColor: "black",
-        color: "lime",
-        padding: 10,
-        margin: 5,
-      }}
-    >
-      Monthly Compensation: ${monthlyComp.toFixed(2)}
-    </div>
+    <>
+      <div
+        className="row"
+        style={{
+          backgroundColor: "black",
+          color: "lime",
+          textAlign: "center",
+          padding: 10,
+          margin: 5,
+          // height: "100px",
+        }}
+      >
+        <p>
+          Monthly Compensation: <br />${monthlyComp.toFixed(2)}
+        </p>
+      </div>
+    </>
   );
 }

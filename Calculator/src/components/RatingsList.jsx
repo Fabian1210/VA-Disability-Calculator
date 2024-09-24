@@ -1,13 +1,14 @@
 import React from "react";
 
-export default function RatingsList({ selectedRatings, removeRatingClick }) {
+export default function RatingsList({ selectedRatings }) {
   return (
     <div
       style={{
         // border: "solid green",
+        paddingBottom: "5px",
         display: "flex",
         flexWrap: "wrap",
-        width: "40%",
+        width: "90%",
       }}
     >
       <ul
@@ -23,10 +24,9 @@ export default function RatingsList({ selectedRatings, removeRatingClick }) {
         {selectedRatings.map((rating, index) => (
           <li
             key={index}
-            onClick={() => removeRatingClick(rating)}
             style={{
               listStyleType: "none", // Remove bullet points
-              cursor: "pointer",
+              cursor: "default",
               padding: "10px", // Add padding inside each item
               borderRadius: "5px", // Optional: rounding the corners for styling
               backgroundColor: "coral", // Add background for better visibility
