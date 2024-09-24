@@ -3,6 +3,7 @@ import Compensation from "./Compensation";
 import PercentageGraph from "./PercentageGraph";
 import RatingsList from "./RatingsList";
 import VaMath from "./VaMath";
+import style from "./percentageGrid.module.css";
 
 export default function PercentageGrid() {
   const [rating, setRating] = useState(0); // Combined rating
@@ -45,46 +46,23 @@ export default function PercentageGrid() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          border: "solid yellow",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            border: "solid blue",
-            width: "50%",
-          }}
-        >
+      <div className={style.headerContainer}>
+        <div className={style.circleGraphContainer}>
           <PercentageGraph rating={rating.toFixed()} />
-          <div
-            className="row"
-            style={{ backgroundColor: "lightblue", padding: 10, margin: 5 }}
-          >
-            <p
-              style={{
-                textAlign: "center",
-                padding: 0,
-                margin: 0,
-                fontSize: "10px",
-                fontWeight: "bold",
-              }}
-            >
+          <div className={style.aggRatingBox}>
+            <p className={style.aggRatingBoxText}>
               <VaMath selectedRatings={selectedRatings} />
             </p>
           </div>
         </div>
-        <div style={{ border: "solid red", width: "50%" }}>
+        <div className={style.compensationBox}>
           <Compensation rating={Math.round(rating)} />{" "}
           {/* Round rating for compensation */}
         </div>
       </div>
+
+      {/* -------------------- */}
+
       {/* Display the selected ratings in a separate component */}
       <RatingsList selectedRatings={selectedRatings} />
 
