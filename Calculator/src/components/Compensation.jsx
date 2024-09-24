@@ -1,4 +1,5 @@
 import React from "react";
+import style from "../App.css";
 
 export default function Compensation({ rating }) {
   const values = {
@@ -17,17 +18,7 @@ export default function Compensation({ rating }) {
 
   return (
     <>
-      <div
-        className="row"
-        style={{
-          backgroundColor: "black",
-          color: "lime",
-          textAlign: "center",
-          padding: 10,
-          margin: 5,
-          // height: "100px",
-        }}
-      >
+      <div className={style.compStyle}>
         <p>
           Monthly Compensation: <br />${monthlyComp.toFixed(2)}
         </p>
