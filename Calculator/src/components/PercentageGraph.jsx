@@ -14,10 +14,10 @@ export default function PercentageGraph({ rating }) {
           value={roundedRating}
           text={`${roundedRating}%`}
           styles={buildStyles({
-            pathColor: "green",
+            pathColor: "#0dd157",
             textWrap: "wrap",
             textSize: "27px",
-            textColor: "green",
+            textColor: "#f6f9fc",
             pathTransitionDuration: 0.5,
           })}
         />
