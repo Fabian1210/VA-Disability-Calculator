@@ -1,5 +1,4 @@
 import React from "react";
-import style from "../App.css";
 
 export default function Compensation({ rating }) {
   const values = {
@@ -14,14 +13,38 @@ export default function Compensation({ rating }) {
     90: 2241.91,
     100: 3737.85,
   };
-  const monthlyComp = values[rating] || 0;
+  // Function to round up to the nearest compensation bracket
+  const getCompensationTier = (rating) => {
+    if (rating < 10) return 10; // Minimum rating is 10%
 
+    // Round up to the nearest tier
+    const roundedRating = Math.ceil(rating / 10) * 10;
+    return Math.min(roundedRating, 100); // Ensure it doesn't exceed 100%
+  };
+
+  const compensationTier = getCompensationTier(rating);
+  const monthlyComp = values[compensationTier] || 0;
   return (
     <>
-      <div className={style.compStyle}>
-        <p>
-          Monthly Compensation: <br />${monthlyComp.toFixed(2)}
-        </p>
+      <div>
+        <div
+          style={{
+            backgroundColor: "black",
+            color: "lime",
+            textAlign: "center",
+            padding: 10,
+            margin: 5,
+          }}
+        >
+          <p>
+            Monthly Compensation: <br />${monthlyComp.toFixed(2)}
+          </p>
+        </div>
+        <div>
+          <a href="https://www.va.gov/disability/compensation-rates/veteran-rates/">
+            2024 VA Disablity Rates
+          </a>
+        </div>
       </div>
     </>
   );

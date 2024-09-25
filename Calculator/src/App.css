@@ -6,12 +6,3 @@
   align-items: center;
   max-width: 640px;
 }
-
-/* ----- Compensation Component CSS ----- */
-.compStyle {
-  background-color: black;
-  color: lime;
-  text-align: center;
-  padding: 10;
-  margin: 5;
-}
