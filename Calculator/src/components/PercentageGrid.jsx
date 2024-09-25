@@ -51,6 +51,7 @@ export default function PercentageGrid() {
           <PercentageGraph rating={rating.toFixed()} />
           <div className={style.aggRatingBox}>
             <p className={style.aggRatingBoxText}>
+              {/* ----------- */}
               <VaMath selectedRatings={selectedRatings} />
             </p>
           </div>
@@ -66,7 +67,7 @@ export default function PercentageGrid() {
       {/* Display the selected ratings in a separate component */}
       <RatingsList selectedRatings={selectedRatings} />
 
-      <button className="btn btn-primary" onClick={resetRating}>
+      <button className="btn btn-warning" onClick={resetRating}>
         Reset
       </button>
       <div className="row justify-content-center">

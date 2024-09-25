@@ -15,7 +15,7 @@ export default function Compensation({ rating }) {
   };
   // Function to round up to the nearest compensation bracket
   const getCompensationTier = (rating) => {
-    if (rating < 10) return 10; // Minimum rating is 10%
+    // if (rating < 10) return 10; // Minimum rating is 10%
 
     // Round up to the nearest tier
     const roundedRating = Math.ceil(rating / 10) * 10;
@@ -29,20 +29,23 @@ export default function Compensation({ rating }) {
       <div>
         <div
           style={{
-            backgroundColor: "black",
-            color: "lime",
+            color: "#11cc00",
             textAlign: "center",
             padding: 10,
             margin: 5,
+            fontSize: "26px",
           }}
         >
           <p>
             Monthly Compensation: <br />${monthlyComp.toFixed(2)}
           </p>
         </div>
-        <div>
-          <a href="https://www.va.gov/disability/compensation-rates/veteran-rates/">
-            2024 VA Disablity Rates
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <a
+            href="https://www.va.gov/disability/compensation-rates/veteran-rates/"
+            target="_blank"
+          >
+            2024 VA Disability Rates
           </a>
         </div>
       </div>

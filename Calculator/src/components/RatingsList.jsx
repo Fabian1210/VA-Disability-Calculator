@@ -4,7 +4,7 @@ export default function RatingsList({ selectedRatings }) {
   return (
     <div
       style={{
-        // border: "solid green",
+        minHeight: "55px",
         paddingBottom: "5px",
         display: "flex",
         flexWrap: "wrap",
@@ -14,7 +14,6 @@ export default function RatingsList({ selectedRatings }) {
       <ul
         style={{
           display: "flex",
-          //   flexDirection: "row",
           padding: 0,
           margin: 0,
           flexWrap: "wrap",
@@ -25,11 +24,13 @@ export default function RatingsList({ selectedRatings }) {
           <li
             key={index}
             style={{
-              listStyleType: "none", // Remove bullet points
+              listStyleType: "none",
               cursor: "default",
-              padding: "10px", // Add padding inside each item
-              borderRadius: "5px", // Optional: rounding the corners for styling
-              backgroundColor: "coral", // Add background for better visibility
+              padding: "10px",
+              borderRadius: "5px",
+              backgroundColor: "#5cb85c",
+              color: "white",
+              fontWeight: "bold",
             }}
           >
             {rating}%
